@@ -3,7 +3,7 @@ import { useState } from "react";
 import { AppShell } from "@/components/AppShell";
 import { useSettings } from "@/lib/settings";
 import {
-  colorClasses,
+  cc,
   contacts,
   initialActions,
   initialEvents,
@@ -123,12 +123,12 @@ function Briefing() {
                       <p className="text-sm font-semibold">{e.start}</p>
                       <p className="text-[11px] text-mute">{e.duration}</p>
                     </div>
-                    <div className={`w-1 self-stretch rounded-full ${colorClasses[e.color].dot}`} />
+                    <div className={`w-1 self-stretch rounded-full ${cc(e.color).dot}`} />
                     <div className="min-w-0 flex-1">
                       <p className="text-sm font-medium truncate">{e.title}</p>
                       <p className="text-xs text-mute truncate">{e.detail}</p>
                     </div>
-                    <span className={`text-[11px] font-medium px-2 py-1 rounded-md shrink-0 ${colorClasses[e.color].chip}`}>
+                    <span className={`text-[11px] font-medium px-2 py-1 rounded-md shrink-0 ${cc(e.color).chip}`}>
                       {tagLabels[e.tag]}
                     </span>
                   </div>
@@ -226,7 +226,7 @@ function Briefing() {
                     className="flex items-center gap-3 hover:bg-paper rounded-lg p-1.5 transition-colors"
                   >
                     <span
-                      className={`size-10 rounded-lg grid place-items-center text-xs font-semibold ${colorClasses[c.color].chip}`}
+                      className={`size-10 rounded-lg grid place-items-center text-xs font-semibold ${cc(c.color).chip}`}
                     >
                       {c.initials}
                     </span>

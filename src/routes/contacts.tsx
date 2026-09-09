@@ -1,7 +1,7 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { AppShell } from "@/components/AppShell";
 import { useSettings } from "@/lib/settings";
-import { colorClasses, contacts } from "@/lib/mock-data";
+import { cc, contacts } from "@/lib/mock-data";
 
 type Search = { id?: string };
 
@@ -52,7 +52,7 @@ function ContactsPage() {
                   }`}
                 >
                   <span
-                    className={`size-9 rounded-lg grid place-items-center text-xs font-semibold shrink-0 ${colorClasses[c.color].chip}`}
+                    className={`size-9 rounded-lg grid place-items-center text-xs font-semibold shrink-0 ${cc(c.color).chip}`}
                   >
                     {c.initials}
                   </span>
@@ -60,7 +60,7 @@ function ContactsPage() {
                     <span className="block text-sm font-medium truncate">{c.name}</span>
                     <span className="block text-[11px] text-mute truncate">{c.company}</span>
                   </span>
-                  <span className={`text-[11px] px-2 py-0.5 rounded-md shrink-0 ${colorClasses[c.color].chip}`}>
+                  <span className={`text-[11px] px-2 py-0.5 rounded-md shrink-0 ${cc(c.color).chip}`}>
                     {c.status}
                   </span>
                 </button>
@@ -71,7 +71,7 @@ function ContactsPage() {
               <div className="flex flex-wrap items-center gap-4 justify-between">
                 <div className="flex items-center gap-3">
                   <span
-                    className={`size-12 rounded-xl grid place-items-center text-sm font-semibold ${colorClasses[selected.color].chip}`}
+                    className={`size-12 rounded-xl grid place-items-center text-sm font-semibold ${cc(selected.color).chip}`}
                   >
                     {selected.initials}
                   </span>

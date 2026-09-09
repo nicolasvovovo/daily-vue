@@ -354,3 +354,7 @@ export const contacts: Contact[] = [
     ],
   },
 ];
+
+export function cc(key: string): { dot: string; chip: string } {
+  return colorClasses[key] ?? { dot: "bg-mute", chip: "bg-paper text-mute" };
+}

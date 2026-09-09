@@ -3,7 +3,7 @@ import { useState } from "react";
 import { AppShell } from "@/components/AppShell";
 import { useSettings } from "@/lib/settings";
 import {
-  colorClasses,
+  cc,
   eventColors,
   initialEvents,
   tagLabels,
@@ -106,7 +106,7 @@ function DayView({ events }: { events: CalEvent[] }) {
             <span className="w-14 shrink-0 text-xs text-mute pt-1">{h}</span>
             <div className="flex-1 space-y-2">
               {slot.map((e) => (
-                <div key={e.id} className={`rounded-lg px-3 py-2 ${colorClasses[e.color].chip}`}>
+                <div key={e.id} className={`rounded-lg px-3 py-2 ${cc(e.color).chip}`}>
                   <p className="text-sm font-medium">{e.title}</p>
                   <p className="text-xs opacity-80">
                     {e.start} · {e.duration} · {tagLabels[e.tag]}
@@ -135,7 +135,7 @@ function WeekView({ events }: { events: CalEvent[] }) {
             {events
               .filter((e) => e.day === i)
               .map((e) => (
-                <div key={e.id} className={`rounded-lg px-2.5 py-2 ${colorClasses[e.color].chip}`}>
+                <div key={e.id} className={`rounded-lg px-2.5 py-2 ${cc(e.color).chip}`}>
                   <p className="text-[11px] font-semibold">{e.start}</p>
                   <p className="text-xs font-medium leading-snug">{e.title}</p>
                   <p className="text-[10px] opacity-75 mt-0.5">{tagLabels[e.tag]}</p>
@@ -170,7 +170,7 @@ function MonthView({ events }: { events: CalEvent[] }) {
               <div className="mt-1 space-y-1">
                 {dayEvents.map((e) => (
                   <div key={e.id} className="flex items-center gap-1.5">
-                    <span className={`size-1.5 rounded-full shrink-0 ${colorClasses[e.color].dot}`} />
+                    <span className={`size-1.5 rounded-full shrink-0 ${cc(e.color).dot}`} />
                     <span className="text-[11px] truncate">{e.title}</span>
                   </div>
                 ))}
