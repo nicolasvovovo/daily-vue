@@ -300,7 +300,7 @@ export const contacts: Contact[] = [
     email: "tomas@cobaltfreight.pt",
     phone: "+351 912 004 771",
     timeline: [
-      { id: "t6", kind: "whatsapp" as unknown as "email", title: "Renewal signature", detail: "Legal cleared, signed copy today", when: "Today · 09:05" },
+      { id: "t6", kind: "email", title: "WhatsApp — renewal signature", detail: "Legal cleared, signed copy today", when: "Today · 09:05" },
       { id: "t7", kind: "meeting", title: "Renewal review", detail: "40 min · contract walkthrough", when: "Yesterday · 11:00" },
       { id: "t8", kind: "call", title: "Outbound call", detail: "12 min · pricing tiers discussed", when: "Mon · 14:35" },
       { id: "t9", kind: "email", title: "Renewal quote 2026", detail: "3-year term, 8% uplift", when: "Fri · 09:12" },
