@@ -3,11 +3,11 @@ import { AppShell } from "@/components/AppShell";
 import { useSettings } from "@/lib/settings";
 import { cc, contacts } from "@/lib/mock-data";
 
-type Search = { id?: string };
+type Search = { id?: string | undefined };
 
 export const Route = createFileRoute("/contacts")({
   validateSearch: (search: Record<string, unknown>): Search => ({
-    id: typeof search.id === "string" ? search.id : undefined,
+    id: typeof search["id"] === "string" ? (search["id"] as string) : undefined,
   }),
   head: () => ({
     meta: [
@@ -29,7 +29,7 @@ function ContactsPage() {
   const { t } = useSettings();
   const { id } = Route.useSearch();
   const navigate = useNavigate({ from: "/contacts" });
-  const selected = contacts.find((c) => c.id === id) ?? contacts[0];
+  const selected = contacts.find((c) => c.id === id) ?? contacts[0]!;
 
   return (
     <AppShell>

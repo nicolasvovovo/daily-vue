@@ -213,7 +213,7 @@ function EventModal({
       duration,
       tag,
       color,
-      notes: notes.trim() || undefined,
+      ...(notes.trim() ? { notes: notes.trim() } : {}),
     });
   };
 
